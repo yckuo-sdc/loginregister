@@ -1,0 +1,23 @@
+{
+    "name": "yckuo/login-register",
+    "description": "login and register",
+    "require": {
+        "wixel/gump": "^1.2",
+		"phpmailer/phpmailer": "~6.1",
+		"plasticbrain/php-flash-messages": "1.0.1"
+	},
+    "authors": [
+        {
+            "name": "YuChieh Kuo",
+            "email": "yckuo@mail.tainan.gov.tw"
+        }
+    ],
+	"autoload": {
+		"classmap": [
+         	"action",
+         	"validators",
+			"libraries",
+			"config"
+		]
+	}
+}
