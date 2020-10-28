@@ -1,7 +1,6 @@
 <?php
 //if form has been submitted process it
-if(isset($_POST['submit']))
-{
+if(isset($_POST['submit'])) {
   $gump = new GUMP();
   $_POST = $gump->sanitize($_POST); 
 

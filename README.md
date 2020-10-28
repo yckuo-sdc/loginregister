@@ -1,3 +1,3 @@
 # loginregister
-Model View Controller Framework
+Model-view-controller Framework
 20201024
