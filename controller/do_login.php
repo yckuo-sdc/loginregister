@@ -5,7 +5,7 @@ if(isset($_POST['submit'])) {
 
   $_POST = $gump->sanitize($_POST); 
   $validation_rules_array = array(
-      'username'    => 'required|alpha_numeric|max_len,20|min_len,3',
+      'username'    => 'required|alpha_numeric_dash|max_len,20|min_len,3',
       'password'    => 'required|max_len,20|min_len,3'
   );
   $gump->validation_rules($validation_rules_array);
@@ -27,7 +27,7 @@ if(isset($_POST['submit'])) {
     $userVeridator->loginVerification($username, $password);
     $error = $userVeridator->getErrorArray();
 
-    if(count($error) == 0){
+    if(empty($error)) {
       $table = "members";
       $condition = "username = :username";
       $order_by = "1";
@@ -37,6 +37,7 @@ if(isset($_POST['submit'])) {
       $result = Database::get()->query($table, $condition, $order_by, $fields, $limit, $data_array);
       $_SESSION['memberID'] = $result[0]['memberID'];
       $_SESSION['username'] = $username;
+      $msg->success('登入成功！');
       header('Location: home');
       exit;
     }

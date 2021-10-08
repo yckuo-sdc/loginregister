@@ -37,7 +37,8 @@ if(isset($_POST['submit'])) {
     $error = $userVeridator->getErrorArray();
   } 
   //if no errors have been created carry on
-  if(count($error) == 0)
+  if(empty($error))
+  //if(count($error) == 0)
   {
     // 確認 resetToken
     $table = 'members';

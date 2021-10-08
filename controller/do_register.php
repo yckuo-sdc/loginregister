@@ -6,7 +6,7 @@ if(isset($_POST['submit']))
   $_POST = $gump->sanitize($_POST); 
 
   $validation_rules_array = array(
-    'username'    => 'required|alpha_numeric|max_len,20|min_len,3',
+    'username'    => 'required|alpha_numeric_dash|max_len,20|min_len,3',
     'email'       => 'required|valid_email',
     'password'    => 'required|max_len,20|min_len,3',
     'passwordConfirm' => 'required'
@@ -37,7 +37,7 @@ if(isset($_POST['submit']))
     $error = $userVeridator->getErrorArray();
   } 
   //if no errors have been created carry on
-  if(count($error) == 0) {
+  if(empty($error)) {
     //hash the password
     $passwordObject = new Password();
     $hashedpassword = $passwordObject->password_hash($password, PASSWORD_BCRYPT);

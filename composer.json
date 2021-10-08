@@ -1,11 +1,14 @@
 {
-    "name": "yckuo/login-register",
+    "name": "yckuo/loginregister",
     "description": "login and register",
     "require": {
         "wixel/gump": "^1.2",
-		"phpmailer/phpmailer": "~6.1",
-		"plasticbrain/php-flash-messages": "1.0.1"
+		"phpmailer/phpmailer": "^6.5",
+		"plasticbrain/php-flash-messages": "^1.0.1",
+		"tamtamchik/simple-flash": "2.*",
+		"monolog/monolog": "^1.17|^2.0"
 	},
+    "license": "proprietary",
     "authors": [
         {
             "name": "YuChieh Kuo",

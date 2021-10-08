@@ -114,11 +114,15 @@ class DatabaseAccessObject {
 
         $setting_list = "";
         for ($xx = 0; $xx < count($data_array); $xx++) {
-            list($key, $value) = each($data_array);
+            // deprecated function: each()
+            // list($key, $value) = each($data_array);
+            $key = key($data_array);
+            $value = current($data_array);
             $setting_list .= $key . "=" . ':'.$key;
             if ($xx != count($data_array) - 1){
                 $setting_list .= ",";
             }
+            next($data_array);
         }
         $data_array[$key_column] = $id;
         $this->last_sql = "UPDATE " . $table . " SET " . $setting_list . " WHERE " . $key_column . " = " . ":".$key_column;
